@@ -7,8 +7,27 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="1200"/>
+            <ColumnDefinition Width="86*"/>          
         </Grid.ColumnDefinitions>
-            <ContentControl Grid.Column="1" Content="{Binding}" Style="{StaticResource DetailsContentStyle}" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="3.5*"/>
+            <RowDefinition Height="83*"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="1">
+            <Image.Source>
+                <BitmapImage UriSource="C:/Users/Anuitex-123/source/repos/LiveMotion/LiveMotion/Resources/Images/LiveMotion.png"/>
+            </Image.Source>
+        </Image>
+        <ListBox Grid.Row="3"
+                 ItemsSource="{Binding Presentations}"
+                 ItemContainerStyle ="{DynamicResource ParticipantsListBoxItemStyle}"
+                 ItemTemplate="{DynamicResource PresentationsDataTemplate}"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto"
+                 BorderBrush="Transparent"
+            />
+        <ContentControl Grid.Column="1" Grid.RowSpan="4" Content="{Binding}" Style="{StaticResource DetailsContentStyle}" />
     </Grid>
 </Window>

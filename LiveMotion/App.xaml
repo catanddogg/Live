@@ -6,10 +6,15 @@
              xmlns:local="clr-namespace:LiveMotion">
     <prism:PrismApplication.Resources>
         <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Resources/Theme/Theme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate x:Key="DetailsTemplate">
                 <views:DetailsView/>
             </DataTemplate>
+
+            <SolidColorBrush x:Key="SteelGray">#1e2835</SolidColorBrush>
 
             <Style x:Key="DetailsContentStyle" TargetType="ContentControl">
                 <Setter Property="ContentTemplate" Value="{StaticResource DetailsTemplate}"/>
